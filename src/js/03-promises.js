@@ -15,10 +15,10 @@ function onFormSubmit(event) {
   const step = Number(formData.get('step'));
  
 
-  setTimeout(generatePromises, firstDelay, amount, step, firstDelay);
+  setTimeout(fulfillPromises, firstDelay, amount, step, firstDelay);
 }
 
-function generatePromises(amount, step, firstDelay) {
+function fulfillPromises(amount, step, firstDelay) {
   for (let i = 0; i < amount; i += 1) {
     createPromise(i + 1, step * i)
       .then(({ position, delay }) => {
